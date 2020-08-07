@@ -1,9 +1,9 @@
 // Global Variables
-let blinks = getCookie("blinks");
-let autoVal = Number(getCookie("autoVal"));
-let autoValPrice = Number(getCookie("autoValPrice"));
-let blinkVal = Number(getCookie("blinkVal"));
-let blinkMultPrice = Number(getCookie("blinkMultPrice"));
+let blinks = getCookie("blinks") || 0;
+let autoVal = Number(getCookie("autoVal")) || 0;
+let autoValPrice = Number(getCookie("autoValPrice")) || 50;
+let blinkVal = Number(getCookie("blinkVal")) || 1;
+let blinkMultPrice = Number(getCookie("blinkMultPrice")) || 25;
 let blinker;
 let blinkMult;
 let outfitUpgrade;
@@ -13,10 +13,12 @@ let stickGlasses;
 let stickCrown;
 let stickCancer;
 let resetButton;
-let glasses = Number(getCookie("glasses"));
-let crown = Number(getCookie("crown"));
-let cancer = Number(getCookie("cancer"));
-let outfitPrice = Number(getCookie("outfitPrice")) || "No More Outfits!";
+let glasses = Number(getCookie("glasses")) || 0;
+let crown = Number(getCookie("crown")) || 0;
+let cancer = Number(getCookie("cancer")) || 0;
+let outfitPrice = Number(getCookie("outfitPrice")) || 500;
+let outfitsBought = Number(getCookie("outfitsBought")) || 0;
+let maxOutfitPrice = 10000;
 
 function preload() {
   stick = loadImage("./assets/stickman.png");
@@ -52,6 +54,11 @@ function draw() {
   background(col);
   blinks = Math.round(blinks);
   
+  if (outfitsBought) {
+    outfitPrice = "No More Outfits!";
+    outfitUpgrade.price = "No More Outfits!";
+  }
+  
   resetButton.position(25, windowHeight - 50);
   resetButton.mousePressed(resetCookies);
   
@@ -65,6 +72,7 @@ function draw() {
   document.cookie = `crown=${crown}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
   document.cookie = `cancer=${cancer}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
   document.cookie = `outfitPrice=${outfitPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
+  document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
 
   // Outfits
   blinker.update("auto");
@@ -156,7 +164,7 @@ function messages() {
     text("You are", 280, 105);
     text("officialy", 280, 125);
     text("Mark :-)", 280, 145);
-  } else if (blinks > 999 && blinks < 2000) {
+  } else if (blinks > maxOutfitPrice) {
     fill("gray");
     rect(278, 85, 70, 70);
     textSize(17);
@@ -192,6 +200,7 @@ function resetCookies() {
   cancer = 0;
   outfitPrice = 500;
   outfitUpgrade.price = 500;
+  outfitsBought = 0;
   
   // Reset Blinks
   blinks = 0 - blinkVal;
