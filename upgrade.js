@@ -43,12 +43,13 @@ class Upgrade {
           glasses = 0;
           crown = 1;
           cancer = 0;
-        } else if (this.price == 10000) {
+        } else if (this.price == maxOutfitPrice) {
           this.price = "No More Outfits!";
           outfitPrice = "No More Outfits!";
           glasses = 0;
           crown = 0;
           cancer = 1;
+          outfitsBought = 1;
         }
         
       }
