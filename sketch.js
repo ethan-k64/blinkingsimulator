@@ -4,6 +4,7 @@ let autoVal = Number(getCookie("autoVal")) || 0;
 let autoValPrice = Number(getCookie("autoValPrice")) || 50;
 let blinkVal = Number(getCookie("blinkVal")) || 1;
 let blinkMultPrice = Number(getCookie("blinkMultPrice")) || 25;
+let col = [255, 255, 255];
 let blinker;
 let blinkMult;
 let outfitUpgrade;
@@ -36,7 +37,6 @@ function setup() {
   const cnv = createCanvas(600, 400);
   cnv.position(displayWidth / 2 - width / 2, 75);
   
-  col = color(255);
   resetButton = select("#resetButton");
   resetButton.position(25, windowHeight - 50);
   
@@ -51,7 +51,7 @@ function setup() {
 }
 
 function draw() {
-  background(col);
+  background(col[0], col[1], col[2]);
   blinks = Math.round(blinks);
   
   if (outfitsBought) {
@@ -106,11 +106,11 @@ function mousePressed() {
 
 function checkBackground() {
   if (mouseX < 70 && mouseX > 25 && mouseY < 68 && mouseY > 20) {
-    col = color(255);
+    col = [255, 255, 255];
   } else if (mouseX < 145 && mouseX > 100 && mouseY < 68 && mouseY > 20) {
-    col = color(255, 0, 0);
+    col = [255, 0, 0];
   } else if (mouseX < 220 && mouseX > 175 && mouseY < 68 && mouseY > 20) {
-    col = color(0, 0, 255);
+    col = [0, 0, 255];
   }
 }
 
