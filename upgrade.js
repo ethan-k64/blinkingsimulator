@@ -27,10 +27,10 @@ class Upgrade {
         this.price = Math.round(this.price);
         blinkMultPrice *= 1.8;
         blinkMultPrice = Math.round(blinkMultPrice);
-        
+
         blinkVal++;
       } else if (option === "outfit") {
-        
+
         if (this.price == 500) {
           this.price = 1000;
           outfitPrice = 1000;
@@ -51,11 +51,19 @@ class Upgrade {
           cancer = 1;
           outfitsBought = 1;
         }
-        
+
       }
 
     } else if (mouseX > this.pos.x && mouseX < this.pos.x + 150 && mouseY > this.pos.y && mouseY < this.pos.y + 60) {
-      this.s = color(0, 0, 255);
+
+      if (col[0] == 255 && col[1] == 255 && col[2] == 255) {
+        this.s = color(0, 0, 255);
+      } else if (col[0] == 255 && col[1] == 0 && col[2] == 0) {
+        this.s = color(0, 0, 255);
+      } else {
+        this.s = color(255, 0, 0);
+      }
+
     } else {
       this.s = color(0, 0, 0);
     }
@@ -65,7 +73,8 @@ class Upgrade {
     push();
     strokeWeight(2);
     stroke(this.s);
-    noFill();
+
+    fill("gray");
     translate(this.pos.x, this.pos.y);
     rect(0, 0, 150, 60);
     pop();
@@ -73,7 +82,7 @@ class Upgrade {
     push();
 
     if (blinks < this.price) {
-      fill(225, 0, 0);
+      fill("red");
     } else {
       fill(0);
     }
@@ -82,13 +91,13 @@ class Upgrade {
     textSize(18);
     text(this.name, 0, 0);
     textSize(12);
-    
+
     if (this.price != "No More Outfits!") {
       text(`${this.price} Blinks`, 0, 25);
     } else {
       text(this.price, 0, 25);
     }
-    
+
     pop();
   }
 }
