@@ -73,7 +73,6 @@ class Upgrade {
     push();
     strokeWeight(2);
     stroke(this.s);
-
     fill("gray");
     translate(this.pos.x, this.pos.y);
     rect(0, 0, 150, 60);
