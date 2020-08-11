@@ -37,6 +37,7 @@ function setup() {
   const cnv = createCanvas(600, 400);
   cnv.position(displayWidth / 2 - width / 2, 75);
   
+  // Assing Reset Button
   resetButton = select("#resetButton");
   resetButton.position(25, windowHeight - 50);
   
@@ -44,7 +45,8 @@ function setup() {
   blinker = new Upgrade("Auto Blinker", autoValPrice, createVector(425, 25));
   blinkMult = new Upgrade("Blink Multiplier", blinkMultPrice, createVector(425, height / 2 - 30));
   outfitUpgrade = new Upgrade("Outfit", outfitPrice, createVector(425, height - 90));
-
+  
+  // Auto Blinker
   setInterval(function() {
     blinks += autoVal;
   }, 1000);
@@ -74,7 +76,7 @@ function draw() {
   document.cookie = `outfitPrice=${outfitPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
   document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
 
-  // Outfits
+  // Call Upgrade Methods
   blinker.update("auto");
   blinkMult.update("mult");
   outfitUpgrade.update("outfit");
@@ -98,7 +100,7 @@ function draw() {
   }
 }
 
-
+// Extra Functions
 function mousePressed() {
   blinks += blinkVal;
   checkBackground();
@@ -115,23 +117,39 @@ function checkBackground() {
 }
 
 function drawConfig() {
+  // Draw Config Text
+  push();
   fill(0);
   textSize(50);
   text(`Blinks:${blinks}`, 15, 340);
+  pop();
 
+  push();
   fill("grey");
   textSize(20);
   text("Version: 2.0.0", 18, 380);
-
+  pop();
+  
+  // Draw Background Buttons
+  push();
   fill(255);
+  strokeWeight(2);
   rect(25, 20, 45, 45);
+  pop();
 
+  push();
   fill(255, 0, 0);
+  strokeWeight(2);
   rect(100, 20, 45, 45);
+  pop();
 
+  push();
   fill(0, 0, 255);
+  strokeWeight(2);
   rect(175, 20, 45, 45);
-
+  pop();
+  
+  // Draw Upgrade Divider
   push();
   stroke(0);
   strokeWeight(2);
@@ -213,7 +231,7 @@ function getCookie(cname) {
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
   
-  for(var i = 0; i < ca.length; i++) {
+  for (var i = 0; i < ca.length; i++) {
     let c = ca[i];
     
     while (c.charAt(0) == ' ') {
