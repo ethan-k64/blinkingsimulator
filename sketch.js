@@ -77,10 +77,6 @@ function draw() {
   document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
 
   // Call Upgrade Methods
-  blinker.update("auto");
-  blinkMult.update("mult");
-  outfitUpgrade.update("outfit");
-
   blinker.show();
   blinkMult.show();
   outfitUpgrade.show();
@@ -104,6 +100,10 @@ function draw() {
 function mousePressed() {
   blinks += blinkVal;
   checkBackground();
+  
+  blinker.update("auto");
+  blinkMult.update("mult");
+  outfitUpgrade.update("outfit");
 }
 
 function checkBackground() {
