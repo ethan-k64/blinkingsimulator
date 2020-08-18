@@ -77,6 +77,10 @@ function draw() {
   document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
 
   // Call Upgrade Methods
+  blinker.highlight();
+  blinkMult.highlight();
+  outfitUpgrade.highlight();
+  
   blinker.show();
   blinkMult.show();
   outfitUpgrade.show();
