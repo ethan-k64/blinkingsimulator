@@ -6,6 +6,22 @@ class Upgrade {
     this.s = color(0, 0, 0);
   }
 
+  highlight() {
+    if (mouseX > this.pos.x && mouseX < this.pos.x + 150 && mouseY > this.pos.y && mouseY < this.pos.y + 60) {
+
+      if (col[0] == 255 && col[1] == 255 && col[2] == 255) {
+        this.s = color(0, 0, 255);
+      } else if (col[0] == 255 && col[1] == 0 && col[2] == 0) {
+        this.s = color(0, 0, 255);
+      } else {
+        this.s = color(255, 0, 0);
+      }
+
+    } else {
+      this.s = color(0, 0, 0);
+    }
+  }
+  
   update(option) {
     if (mouseX > this.pos.x && mouseX < this.pos.x + 150 && mouseY > this.pos.y && mouseY < this.pos.y + 60 && blinks >= this.price) {
       blinks -= this.price;
