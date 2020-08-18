@@ -7,7 +7,7 @@ class Upgrade {
   }
 
   update(option) {
-    if (mouseX > this.pos.x && mouseX < this.pos.x + 150 && mouseY > this.pos.y && mouseY < this.pos.y + 60 && mouseIsPressed && blinks >= this.price) {
+    if (mouseX > this.pos.x && mouseX < this.pos.x + 150 && mouseY > this.pos.y && mouseY < this.pos.y + 60 && blinks >= this.price) {
       blinks -= this.price;
 
       if (option === "auto") {
