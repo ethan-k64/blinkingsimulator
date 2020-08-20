@@ -65,16 +65,16 @@ function draw() {
   resetButton.mousePressed(resetCookies);
   
   // Cookie Assignment
-  document.cookie = `blinks=${blinks}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `blinkVal=${blinkVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `blinkMultPrice=${blinkMultPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `autoVal=${autoVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `autoValPrice=${autoValPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `glasses=${glasses}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `crown=${crown}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `cancer=${cancer}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `outfitPrice=${outfitPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
-  document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC`;
+  document.cookie = `blinks=${blinks}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `blinkVal=${blinkVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `blinkMultPrice=${blinkMultPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `autoVal=${autoVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `autoValPrice=${autoValPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `glasses=${glasses}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `crown=${crown}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `cancer=${cancer}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `outfitPrice=${outfitPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
 
   // Call Upgrade Methods
   blinker.highlight();
@@ -186,7 +186,7 @@ function messages() {
     text("You are", 280, 105);
     text("officialy", 280, 125);
     text("Mark :-)", 280, 145);
-  } else if (blinks > maxOutfitPrice) {
+  } else if (isNaN(blinks)) {
     fill("gray");
     rect(278, 85, 70, 70);
     textSize(17);
