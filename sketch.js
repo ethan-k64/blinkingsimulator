@@ -131,7 +131,7 @@ function drawConfig() {
   push();
   fill("grey");
   textSize(20);
-  text("Version: 2.0.0", 18, 380);
+  text("Version: 1.1.1", 18, 380);
   pop();
   
   // Draw Background Buttons
