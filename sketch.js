@@ -35,7 +35,7 @@ function setup() {
   
   // Canvas Props
   const cnv = createCanvas(600, 400);
-  cnv.position(displayWidth / 2 - width / 2, 75);
+  cnv.style("margin", "75px auto 0px auto");
   
   // Assing Reset Button
   resetButton = select("#resetButton");
