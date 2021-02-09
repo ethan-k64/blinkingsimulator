@@ -65,16 +65,16 @@ function draw() {
   resetButton.mousePressed(resetCookies);
   
   // Cookie Assignment
-  document.cookie = `blinks=${blinks}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `blinkVal=${blinkVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `blinkMultPrice=${blinkMultPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `autoVal=${autoVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `autoValPrice=${autoValPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `glasses=${glasses}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `crown=${crown}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `cancer=${cancer}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `outfitPrice=${outfitPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
-  document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/Ethan_Knotts/present/-UV_vhDdu`;
+  document.cookie = `blinks=${blinks}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `blinkVal=${blinkVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `blinkMultPrice=${blinkMultPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `autoVal=${autoVal}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `autoValPrice=${autoValPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `glasses=${glasses}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `crown=${crown}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `cancer=${cancer}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `outfitPrice=${outfitPrice}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
+  document.cookie = `outfitsBought=${outfitsBought}; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/blinkingsimulator`;
 
   // Call Upgrade Methods
   blinker.highlight();
